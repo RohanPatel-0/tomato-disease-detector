@@ -14,7 +14,7 @@ class_names = ["Bacterial Spot", "Early Blight", "Healthy", "Late Blight",
                "Leaf Mold", "Powdery Mildew", "Septoria Leaf Spot", "Spider Mites Two-spotted Spider Mite",
                "Target Spot", "Tomato Mosaic Virus", "Tomato Yellow Leaf Curl Virus"]
 
-model = load_model(os.curdir + "\\model-creation\\saved_model.keras")
+model = load_model("model-creation/saved_model.keras")
 
 def preprocess_image(image):
     image = image.convert("RGB")
