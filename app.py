@@ -35,9 +35,11 @@ def home():
             pred = model.predict(image)
             predicted_class_index = np.argmax(pred)
             predicted_class_label = class_names[predicted_class_index]
+            confidence = np.max(pred) * 100
+            confidence = "{:2f}".format(confidence)
         except Exception as err:
             print(f"Error processing image: {err}")
-    return render_template('home.html', prediction=predicted_class_label)
+    return render_template('home.html', prediction=predicted_class_label, confidence=confidence)
 
 if __name__ == '__main__':
     app.run(debug=True)
