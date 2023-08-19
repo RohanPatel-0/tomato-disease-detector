@@ -28,6 +28,7 @@ def preprocess_image(image):
 def home():
     prediction = None
     predicted_class_label = None
+    confidence = None
     if request.method == 'POST':
         try:
             image = Image.open(request.files['image'].stream)
